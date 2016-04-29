@@ -2,6 +2,7 @@
 gallery: true
 categories:
   - access control
+summary: By using this rule you'll be able to link any accounts that have the same email address.
 ---
 
 # Link Accounts with Same Email Address

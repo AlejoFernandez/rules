@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the profile of a user with a set of roles retrieved from SQL Server.
 ---
 ## Add user roles from a SQL Server database
 

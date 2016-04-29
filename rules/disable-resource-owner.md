@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - access control
+summary: By using this rule you'll be able to disable the Resource Owner endpoint.
 ---
 
 ## Disable the Resource Owner endpoint

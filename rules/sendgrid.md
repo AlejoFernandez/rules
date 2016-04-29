@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - webhook
+summary: By using this rule you can send an email to an administrator on the first login using SendGrid.
 ---
 ## Send emails through SendGrid
 

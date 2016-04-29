@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can get an encrypted value from app_metadata.
 ---
 ## Decrypt sensitive data from the user profile
 
@@ -46,11 +47,11 @@ public static string Decrypt(string encryptedText, string keyString, string ivSt
 	{
 		var key = crypt.ComputeHash(Encoding.UTF8.GetBytes(keyString));
 		var iv  = Encoding.UTF8.GetBytes(ivString);
-		
+
 		using (var rijndaelManaged = new RijndaelManaged {Key = key, IV = iv, Mode = CipherMode.CBC}){
-			
+
 			rijndaelManaged.Padding = PaddingMode.Zeros;
-			
+
 			using (var memoryStream = new MemoryStream(Convert.FromBase64String(encryptedText)))
 				using (var cryptoStream = new CryptoStream(memoryStream,
 					rijndaelManaged.CreateDecryptor(key, iv), CryptoStreamMode.Read))

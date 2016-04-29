@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - access control
+summary: By using this rule you can validate that the user is login in from an authorized domain.
 ---
 ## Check user email domain matches domains configured in connection
 
@@ -18,20 +19,20 @@ function (user, context, callback) {
   },
   function(e,r,b){
     if(e) return callback(e);
-    
+
     var connections = JSON.parse(b);
     var connection = connections[_.findIndex(connections,function(c){
       return (c.name === context.connection);
     })];
-    
+
     //No domains -> access allowed
     if( !connection.options.tenant_domain ) return callback(null, user, context);
-    
+
     //Access allowed if domains is found.
     if( _.findIndex(connection.options.domain_aliases,function(d){
-     return user.email.indexOf(d) >= 0; 
+     return user.email.indexOf(d) >= 0;
     }) >= 0 ) return callback(null, user, context);
-    
+
     return callback('Access denied');
   });
 }

@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the profile with the income of the user.
 ---
 ## Add zipcode median household income to the user profile
 

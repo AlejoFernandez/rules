@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you'll be able to enrich the profile with the profile picture retrieved from LinkedIn.
 ---
 ## Use the original sized profile picture for LinkedIn connections
 
@@ -12,7 +13,7 @@ function (user, context, callback) {
   if (context.connection !== 'linkedin') {
     callback(null, user, context);
   }
-  
+
   var request = require('request');
   var options = {
     url: 'https://api.linkedin.com/v1/people/~/picture-urls::(original)?format=json',

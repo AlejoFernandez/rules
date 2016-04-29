@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - access control
+summary: By using this rule you'll be able whitelist a set of ip addresses.
 ---
 ## IP Address whitelist
 

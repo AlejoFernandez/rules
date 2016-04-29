@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - webhook
+summary: By using this rule you'll be able to track sign up events with Keen IO.
 ---
 ## Send events to Keen
 

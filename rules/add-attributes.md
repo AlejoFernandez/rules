@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the user profile with attributes.
 ---
 ## Add attributes to a user for specific connection
 

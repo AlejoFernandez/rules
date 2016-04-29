@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the profile with information from rapLeaf.
 ---
 ## Enrich profile with Rapleaf
 

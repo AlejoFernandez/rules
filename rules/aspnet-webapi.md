@@ -2,6 +2,8 @@
 gallery: true
 categories:
 - webhook
+summary: By using this rule you can send information of the user profile to a custom webhook.
+logo: net
 ---
 ## Custom webhook with ASPNET WebApi2
 

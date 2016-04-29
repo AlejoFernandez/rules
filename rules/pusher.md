@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - webhook
+summary: By using this rule you can generate a [pusher.com] token that can be used to send and receive messages.
 ---
 ## Obtains a Pusher token for subscribing/publishing to private channels
 
@@ -13,7 +14,7 @@ function (user, context, callback) {
 
   var pusherKey='YOUR PUSHER KEY';
   var pusherSecret = '{YOUR PUSHER SECRET}';
- 
+
   if( context.request.query.channel && context.request.query.socket_id)
   {
     user.pusherAuth = pusherKey + ":" + sign(pusherSecret, context.request.query.channel, context.request.query.socket_id);

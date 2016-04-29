@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can set an encrypted value in app_metadata.
 ---
 ## Encrypt sensitive data in the user profile
 
@@ -14,7 +15,7 @@ function (user, context, callback) {
     license_key: '1234567',
     social_security_number: '56789'
   });
-  
+
   callback(null, user, context);
 
   function encrypt(data) {

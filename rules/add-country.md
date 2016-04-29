@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the profile with the country of the user.
 ---
 ## Add country to the user profile
 
@@ -12,7 +13,7 @@ function (user, context, callback) {
   if (context.request.geoip) {
     user.country = context.request.geoip.country_name;
   }
-  
+
    // Example geoip object:
    // "geoip": {
    //    "country_code": "AR",

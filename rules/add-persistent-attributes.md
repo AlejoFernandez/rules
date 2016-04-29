@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the profile of a user and persist that information in auth0 user store.
 ---
 ## Add persistent attributes to the user
 

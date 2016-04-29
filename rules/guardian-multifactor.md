@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - multifactor
+summary: By using this rule you'll be able to trigger multifactor authentication with Auth0 Guardian.
 ---
 
 ## Multifactor with Auth0 Guardian

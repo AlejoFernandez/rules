@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the profile with information from FullContact.
 ---
 ## Enrich profile with FullContact
 
@@ -13,7 +14,7 @@ function (user, context, callback) {
   var SLACK_HOOK = 'YOUR SLACK HOOK URL';
 
   var slack = require('slack-notify')(SLACK_HOOK);
-  
+
   // skip if no email
   if(!user.email) return callback(null, user, context);
   // skip if fullcontact metadata is already there
@@ -26,7 +27,7 @@ function (user, context, callback) {
     }
   }, function (error, response, body) {
     if (error || (response && response.statusCode !== 200)) {
-      
+
       slack.alert({
         channel: '#slack_channel',
         text: 'Fullcontact API Error',

@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - webhook
+summary: By using this rule you'll be able to trigger a Zap on every sign up.
 ---
 ## Trigger a Zap on New Users
 
@@ -19,9 +20,9 @@ function (user, context, callback) {
   }
 
   var _ = require('lodash');
-  
+
   var ZAP_HOOK_URL = 'REPLACE_ME';
-  
+
   var small_context = {
     appName: context.clientName,
     userAgent: context.userAgent,
@@ -29,9 +30,9 @@ function (user, context, callback) {
     connection: context.connection,
     strategy: context.connectionStrategy
   };
-  
+
   var payload_to_zap = _.extend({}, user, small_context);
-  
+
   request.post({
     url: ZAP_HOOK_URL,
     json: payload_to_zap

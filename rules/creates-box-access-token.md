@@ -1,7 +1,8 @@
 ---
-gallery: false
+gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the user profile with Box's access token.
 ---
 ## Add Box.com access_token to the user profile
 
@@ -20,12 +21,12 @@ function(user, context, callback) {
   var privateKey = '-----BEGIN RSA PRIVATE KEY-----\n' + //TODO: REPLACE WITH YOUR OWN PRIVATE KEY
                    'MIIEpAIBAAKCAQEA0VrAkAPyX8o1/zrdMoeerq+ATEX0ZOsL+r86JRM+r8T1wrc/\n' +
                    'OupiWe5TlefCf2EjHv0YrlC6/H6fcpQm42MMGGr3lOg3CsiywJano5mD9/sRjEJ0\n' +  
-                   '........\n' + 
+                   '........\n' +
                    '-----END RSA PRIVATE KEY-----';
 
   //Check if the user has already been provisioned in Box
   if(user.box_id){
-    getBoxAccessToken(boxClientId, boxClientSecret, 
+    getBoxAccessToken(boxClientId, boxClientSecret,
                      user.box_id, "user", privateKey, function(e,token){
       if(e) return callback(e,user,context);
       user.box_access_token = token;
@@ -38,13 +39,13 @@ function(user, context, callback) {
   // 2. Provision the user using the /users API
   // 3. Save the ID in the box_id property for next time
   // 4. Get a Box User access_token
-  
-  getBoxAccessToken(boxClientId, boxClientSecret, 
+
+  getBoxAccessToken(boxClientId, boxClientSecret,
                     boxEnterpriseId, "enterprise", privateKey, function(e,token){
     createUser(user, token.access_token, function(e,u){
       if(e) return callback(e,user,context);
       user.persistent.box_id = u.id; //Save property in users' metadata
-      getBoxAccessToken(boxClientId, boxClientSecret, 
+      getBoxAccessToken(boxClientId, boxClientSecret,
                         u.id, "user", privateKey, function(e,token){
         if(e) return callback(e,user,context);
         user.box_access_token = token;
@@ -70,7 +71,7 @@ function(user, context, callback) {
       });
   }
 
-  function getBoxAccessToken(boxClientId, boxClientSecret, 
+  function getBoxAccessToken(boxClientId, boxClientSecret,
                              boxUserEnterpriseId, boxSubType, privateKey, done){
     var jwtOptions = {
       algorithm: 'RS256',
@@ -98,7 +99,7 @@ function(user, context, callback) {
           done(null, JSON.parse(b));
         });
   }
-     
+
   function uid(len) {
     var buf = []
     , chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'

@@ -2,10 +2,11 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the profile with a google refresh token.
 ---
 ## Create a Google access_token using a Service Account
 
-In some scenarios, you might want to access Google Admin APIs from your applications. Accesing those APIs require either a consent of the Google Apps administrator or creating a Service Account and obtain a token programatically without interactive consent. This rule create such token based on a service account and put it under `user.admin_access_token`. 
+In some scenarios, you might want to access Google Admin APIs from your applications. Accesing those APIs require either a consent of the Google Apps administrator or creating a Service Account and obtain a token programatically without interactive consent. This rule create such token based on a service account and put it under `user.admin_access_token`.
 
 #### 1. Create a Service Account
 
@@ -41,24 +42,24 @@ Here's the rule:
 
 ```js
 function (user, context, callback) {
-  
+
   // this is the private key you downloaded from your service account.
   // make sure you remove the password from the key and convert it to PEM using the following
   // openssl pkcs12 -in yourkey.p12 -out yourkey.pem -nocerts -nodes
   // finally, you should put this as a configuration encrypted in Auth0
-  var KEY = '....RSA private key downloaded from service account...'; 
-  
+  var KEY = '....RSA private key downloaded from service account...';
+
   // this is the email address of the service account created (NOT the Client ID)
   var GOOGLE_CLIENT_ID_EMAIL = '.....@developer.gserviceaccount.com';
-  
+
   // the scope you want access to. Full list of scopes https://developers.google.com/admin-sdk/directory/v1/guides/authorizing
   var SCOPE = 'https://www.googleapis.com/auth/admin.directory.user.readonly';
-  
+
   // a user of your Google Apps domain that this rule would impersonate
   var ADMIN_EMAIL = 'foo@corp.com';
-  
+
   var token = jwt.sign({ scope: SCOPE, sub: ADMIN_EMAIL }, KEY, { audience: "https://accounts.google.com/o/oauth2/token", issuer: GOOGLE_CLIENT_ID_EMAIL, expiresInMinutes: 60, algorithm: 'RS256'});
-  
+
   request.post({ url: 'https://accounts.google.com/o/oauth2/token', form: { grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', assertion: token } }, function(err, resp, body) {
     if (err) return callback(null, user, context);
     var result = JSON.parse(body);
@@ -67,10 +68,10 @@ function (user, context, callback) {
       // log and swallow
       return callback(null, user, context);
     }
-    
+
     user.admin_access_token = result.access_token;
     callback(null, user, context);
   });
-  
+
 }
 ```

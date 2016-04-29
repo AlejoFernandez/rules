@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - webhook
+summary: By using this rule you'll be able to trigger a Zap on every log in.
 ---
 ## Trigger a Zap on Every User Login
 

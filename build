@@ -55,11 +55,17 @@ async.map(files, function (file, callback) {
     })[0].text;
 
     var result = {
+      id:          path.basename(file).replace('.md', ''),
       title:       title || meta.title,
+      summary:     meta.summary || '',
       categories:  meta.categories || ['default'],
       description: description,
       code:        code,
     };
+
+    if (meta.logo) {
+      result['logo'] = meta.logo;
+    }
 
     callback(null, result);
   });

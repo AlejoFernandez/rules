@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you'll be able to map SAML attributes to user profile properties.
 ---
 ## SAML Attributes mapping
 

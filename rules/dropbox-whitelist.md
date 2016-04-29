@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - access control
+summary: By using this rule you'll be able to whitelist users based on a file in Dropbox.
 ---
 ## Whitelist on the cloud
 

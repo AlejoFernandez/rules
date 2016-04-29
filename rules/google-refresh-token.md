@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the profile with a google refresh token.
 ---
 ## Store Google Refresh Token
 

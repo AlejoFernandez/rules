@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - webhook
+summary: By using this rule you can send an email to an administrator on the first login using Mailgun.
 ---
 ## Send emails through Mailgun
 
@@ -18,7 +19,7 @@ function(user, context, callback) {
 
   request.post( {
     url: 'https://api.mailgun.net/v3/{YOUR MAILGUN ACCOUNT}/messages',
-	  auth: 
+	  auth:
 	  {
   		user: 'api',
 	  	pass: '{YOUR MAILGUN KEY}'

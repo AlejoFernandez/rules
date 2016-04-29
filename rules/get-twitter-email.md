@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the profile with the email address obtained from twitter.
 ---
 ## Get email address from Twitter
 

@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can remove some properties from the profile.
 ---
 ## Remove attributes from a user
 

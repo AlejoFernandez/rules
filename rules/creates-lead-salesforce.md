@@ -2,6 +2,8 @@
 gallery: true
 categories:
 - webhook
+summary: By using this rule you'll be able to create a Lead in Salesforce.
+logo: salesforce
 ---
 ## Creates a new Lead in Salesforce on First Login
 
@@ -90,7 +92,7 @@ function (user, context, done) {
         return callback(JSON.parse(b));
       });
   }
-  
+
   // don’t wait for the SF API call to finish, return right away (the request will continue on the sandbox)`
   done(null, user, context);
 }

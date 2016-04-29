@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - access control
+summary: By using this rule you'll be able to prevent access during weekends.
 ---
 
 ## Allow Access during weekdays for a specific App

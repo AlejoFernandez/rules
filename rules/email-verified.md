@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - access control
+summary: By using this rule you can restrict access to users that have verified their emails.
 ---
 # Force email verification
 

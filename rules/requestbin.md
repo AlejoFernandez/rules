@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - debugging
+summary: By using this rule you can dump all rule variables to RequestBin.
 ---
 ## Dump rule variables to RequestBin
 

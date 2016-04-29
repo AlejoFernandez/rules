@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - access control
+summary: By using this rule you can whitelist users based on the domain of their email addresses.
 ---
 ## Email domain whitelist
 

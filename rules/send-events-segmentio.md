@@ -2,6 +2,7 @@
 icon: segmentio.png
 categories:
 - webhook
+summary: By using this rule you'll be able to track sign up events with segment.io.
 ---
 ## Send events to segment.io
 

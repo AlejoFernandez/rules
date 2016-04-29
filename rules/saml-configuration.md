@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - saml
+summary: By using this rule you'll be able to change your SAML configuration.
 ---
 ## Change your SAML configuration
 

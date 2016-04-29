@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - multifactor
+summary: By using this rule you'll be able to trigger multifactor authentication with Google Authenticator.
 ---
 
 ## Multifactor with Google Authenticator

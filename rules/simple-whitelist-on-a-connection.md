@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - access control
+summary: By using this rule you can whitelist users based on the connection they used to sign in.
 ---
 ## Whitelist on Specific Connection
 

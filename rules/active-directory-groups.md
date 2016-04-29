@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - access control
+summary: By using this rule you'll be able to check if the user is member of a specific group.
 ---
 ## Active Directory group membership
 

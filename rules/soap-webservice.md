@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the profile with roles obtained from a soap web-service.
 ---
 ## Roles from a SOAP Service
 

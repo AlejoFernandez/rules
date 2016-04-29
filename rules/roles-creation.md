@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - access control
+summary: By using this rule you can add roles to a user.
 ---
 ## Set roles to a user
 
@@ -19,7 +20,7 @@ function (user, context, callback) {
       cb(null, ['user']);
     }
   };
-    
+
   addRolesToUser(user, function(err, roles) {
     if (err) {
       callback(err);

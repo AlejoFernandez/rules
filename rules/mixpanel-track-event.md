@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - webhook
+summary: By using this rule you can track sign in events in MixPanel.
 ---
 ## Tracks Logins in MixPanel
 

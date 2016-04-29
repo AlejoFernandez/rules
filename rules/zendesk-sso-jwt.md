@@ -2,6 +2,7 @@
 gallery: false
 categories:
 - access control
+summary: By using this rule you'll be able to setup SSO with Zendesk for users using JWT.
 ---
 
 # Zendesk SSO for users using JWT

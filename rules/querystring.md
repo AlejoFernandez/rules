@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can enrich the profile based on querystring parameters.
 ---
 ## Querystring
 

@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - enrich profile
+summary: By using this rule you can store Socure fraud score in app_metadata.
 ---
 ## Detect Fraud Users
 
@@ -14,7 +15,7 @@ function (user, context, callback) {
   if (user.app_metadata.socure_fraudscore) return callback(null, user, context);
 
   var SOCURE_KEY = 'YOUR SOCURE API KEY';
-  
+
   if(!user.email) {
     // the profile doesn't have email so we can't query their api.
     return callback(null, user, context);
@@ -33,7 +34,7 @@ function (user, context, callback) {
     if (resp.statusCode !== 200) return callback(null, user, context);
     var socure_response = JSON.parse(body);
     if (socure_response.status !== 'Ok') return callback(null, user, context);
-    
+
     user.app_metadata = user.app_metadata || {};
     user.app_metadata.socure_fraudscore = socure_response.data.fraudscore;
     user.app_metadata.socure_confidence = socure_response.data.confidence;
@@ -43,9 +44,9 @@ function (user, context, callback) {
     //        "reporteddate":"2014-07-02",
     //        "reason":"ChargeBack Fraud"
     //     }
-    // ] 
+    // ]
     user.app_metadata.socure_details = socure_response.data.details;
-    
+
     auth0.users.updateAppMetadata(user.user_id, user.app_metadata)
       .then(function(){
         callback(null, user, context);

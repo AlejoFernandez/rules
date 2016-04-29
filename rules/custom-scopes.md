@@ -2,6 +2,7 @@
 gallery: true
 categories:
 - access control
+summary: By using this rule you'll be able to map scope values to properties.
 ---
 
 # Custom authorization scopes
